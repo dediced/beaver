@@ -1,6 +1,7 @@
 package com.dediced.beaver;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -11,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class WebLinkController {
 
     @RequestMapping("/link")
-    public WebLink getTestLink() {
-        return new WebLink(1234l, "url", "content");
+    public WebLink getTestLink(@RequestParam("url") String url) {
+        return new WebLink(1234l, url, "content");
     }
 
 }
